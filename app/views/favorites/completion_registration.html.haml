@@ -8,42 +8,32 @@
       #navbar-content.collapse.navbar-collapse.justify-content-end
         %ul.navbar-nav
           %li.nav-item.active
-            %a.nav-link{:href => "#"}
+            %a.nav-link{:href => "/new"}
               お気に入り登録
               %span.sr-only (current)
           %li.nav-item
             %a.nav-link{:href => "#menu"} ログアウト
-
+  
   .py-0
-    %section#registration
+    %section#conpletion_registration
       .container
-        .form
-          %h3.mb-h3 お気に入り登録
-          .form-group
-            %label{:for => "text1"} サイト名:
-            %input#text1.form-control{:type => "text"}
-          .form-group
-            %label{:for => "text1"} リンク先URL:
-            %input#passwd1.form-control{:type => "text"}
-          .form-group
-            %label{:for => "text1"} 画像ファイル:
-            %input#passwd1.form-control{:type => "text"}
-          .form-group
-            %label{:for => "textarea1"} コメント:
-            %textarea#textarea1.form-control{:name=>"messaege", :rows=>"8"}
-          .from-button
-            %a.btn.btn-warning{:href => "/completion_registration", :type => "button"} 登録する
+        .row
+          .form.text-center
+            %h3.mb-h3 登録が完了しました
+            .from-button
+              %a.btn.btn-warning{:href => "/", :type => "button"} topに戻る
 
--# フッター
-%footer.py-4.bg-warning.text-light
+
+  -# フッター
+%footer.py-4.bg-warning.text-light.fixed-bottom
   .container.text-center
     %ul.nav.justify-content-center.mb-3
       %li.nav-item
-        %a.nav-link{:href => "#"} Top
+        %a.nav-link{:href => "/"} Top
       %li.nav-item
         %a.nav-link{:href => "#recommended"} おすすめサイト
       %li.nav-item
-        %a.nav-link{:href => "#"} お気に入り登録
+        %a.nav-link{:href => "/new"} お気に入り登録
       %li.nav-item
         %a.nav-link{:href => "#"} ログアウト
       %li.nav-item
