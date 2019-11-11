@@ -1,0 +1,51 @@
+%body
+  -# ヘッダー
+  %nav.navbar.navbar-expand-md.navbar-dark.bg-warning.sticky-top
+    .container
+      %a.navbar-brand{:href => "/"} Favorites
+      %button.navbar-toggler{"aria-controls" => "navbar-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar-content", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbar-content.collapse.navbar-collapse.justify-content-end
+        %ul.navbar-nav
+          %li.nav-item.active
+            %a.nav-link{:href => "#"}
+              お気に入り登録
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{:href => "#menu"} ログアウト
+
+  .py-0
+    %section#registration
+      .container
+        .form
+          %h3.mb-h3 お気に入り登録
+          .form-group
+            %label{:for => "text1"} サイト名:
+            %input#text1.form-control{:type => "text",:placeholder => "例)山田太郎"}
+          .form-group
+            %label{:for => "text1"} リンク先URL:
+            %input#passwd1.form-control{:type => "text",:placeholder =>"例)https://www.google.com" }
+          .form-group
+            %label{:for => "text1"} 画像ファイル:
+            %input#passwd1.form-control{:type => "text",:placeholder =>"例)https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}
+          .form-group
+            %label{:for => "textarea1"} コメント:
+            %textarea#textarea1.form-control{:name=>"messaege", :rows=>"8",:placeholder =>"なんでもどうぞ"}
+          .from-button
+            %a.btn.btn-warning{:href => "/completion_registration", :type => "button"} 登録する
+
+-# フッター
+%footer.py-4.bg-warning.text-light
+  .container.text-center
+    %ul.nav.justify-content-center.mb-3
+      %li.nav-item
+        %a.nav-link{:href => "#"} Top
+      %li.nav-item
+        %a.nav-link{:href => "#recommended"} おすすめサイト
+      %li.nav-item
+        %a.nav-link{:href => "#"} お気に入り登録
+      %li.nav-item
+        %a.nav-link{:href => "#"} ログアウト
+      %li.nav-item
+    %p
+      %samll Copyright ©2019 Favorites, All Rights Reserved.
