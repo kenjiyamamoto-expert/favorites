@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get '/edit'=> "favorites#edit"
   get '/completion_registration'=> "favorites#completion_registration"
+  get '/completion_edit'=> "favorites#completion_edit"
 end
