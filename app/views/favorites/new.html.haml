@@ -21,16 +21,16 @@
           %h3.mb-h3 お気に入り登録
           .form-group
             %label{:for => "text1"} サイト名:
-            %input#text1.form-control{:type => "text"}
+            %input#text1.form-control{:type => "text",:placeholder => "例)山田太郎"}
           .form-group
             %label{:for => "text1"} リンク先URL:
-            %input#passwd1.form-control{:type => "text"}
+            %input#passwd1.form-control{:type => "text",:placeholder =>"例)https://www.google.com" }
           .form-group
             %label{:for => "text1"} 画像ファイル:
-            %input#passwd1.form-control{:type => "text"}
+            %input#passwd1.form-control{:type => "text",:placeholder =>"例)https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}
           .form-group
             %label{:for => "textarea1"} コメント:
-            %textarea#textarea1.form-control{:name=>"messaege", :rows=>"8"}
+            %textarea#textarea1.form-control{:name=>"messaege", :rows=>"8",:placeholder =>"なんでもどうぞ"}
           .from-button
             %a.btn.btn-warning{:href => "/completion_registration", :type => "button"} 登録する
 
