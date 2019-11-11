@@ -8,7 +8,7 @@
       #navbar-content.collapse.navbar-collapse.justify-content-end
         %ul.navbar-nav
           %li.nav-item.active
-            %a.nav-link{:href => "#"}
+            %a.nav-link{:href => "/new"}
               お気に入り登録
               %span.sr-only (current)
           %li.nav-item
@@ -39,10 +39,9 @@
                   %p.text-center
                     %a{:href => "https://www.google.com"}
                       %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
-                    %p 登録日:2019/01/01
                   %p インターネットの代表的な検索エンジンのひとつ。ロボットと呼ばれるソフトウェアが世界中のWebサイトを巡回して、集めたデータを基に独自の計算を行い、検索結果の順序を決定している。
                 .modal-footer
-                  %a.btn.btn-warning{:href => "https://www.google.com", :type => "button"} 編集
+                  %a.btn.btn-warning{:href => "/edit", :type => "button"} 編集
                   %a.btn.btn-warning{:href => "https://www.google.com", :type => "button"} 削除
          
           .col-sm-6.col-md-3

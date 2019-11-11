@@ -5,6 +5,9 @@ class FavoritesController < ApplicationController
   def new
   end
   
+  def edit
+  end
+  
   def completion_registration
   end
 end
