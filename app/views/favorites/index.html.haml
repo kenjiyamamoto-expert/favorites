@@ -2,7 +2,7 @@
   -# ヘッダー
   %nav.navbar.navbar-expand-md.navbar-dark.bg-warning.sticky-top
     .container
-      %a.navbar-brand{:href => "#"} Favorites
+      %a.navbar-brand{:href => "/"} Favorites
       %button.navbar-toggler{"aria-controls" => "navbar-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar-content", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbar-content.collapse.navbar-collapse.justify-content-end
@@ -57,7 +57,8 @@
                       %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
                     %p.text-center googleを削除しますか？
                 .modal-footer
-                  %a.btn.btn-warning{:href => "/edit", :type => "button"} 削除
+                  %a.btn.btn-warning{:href => "/completion_delete", :type => "button"} 削除
+
           .col-sm-6.col-md-3
             .card.img-thumbnail
               .image-area

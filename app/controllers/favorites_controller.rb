@@ -10,7 +10,10 @@ class FavoritesController < ApplicationController
 
   def completion_edit
   end
-  
+
   def completion_registration
+  end
+
+  def completion_delete
   end
 end
