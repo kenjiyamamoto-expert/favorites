@@ -31,7 +31,7 @@
               = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
             .form-group
               %label{:for => "textarea1"} コメント:
-              = f.text_area :description,rows: 8,class: 'form-control',id: 'favorite_text',placeholder: "例)なんでもどうぞ"
+              = f.text_area :text,rows: 8,class: 'form-control',id: 'favorite_text',placeholder: "例)なんでもどうぞ"
             .from-button
               = f.submit "登録",class: 'btn btn-warning'
 
