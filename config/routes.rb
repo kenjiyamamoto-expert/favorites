@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/completion_registration'=> "favorites#completion_registration"
   get '/completion_edit'=> "favorites#completion_edit"
   get '/completion_delete'=> "favorites#completion_delete"
+
+  resources :favorites
 end
