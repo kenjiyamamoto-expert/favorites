@@ -41,15 +41,15 @@
                       %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
                   %p インターネットの代表的な検索エンジンのひとつ。ロボットと呼ばれるソフトウェアが世界中のWebサイトを巡回して、集めたデータを基に独自の計算を行い、検索結果の順序を決定している。
                 .modal-footer
-                  %a.btn.btn-warning{:href => "/edit", :type => "button"} 編集
-                  %a.btn.btn-warning{"data-target" => "#modal02","data-toggle" => "modal","data-dismiss" => "modal",:type => "button"} 削除
+                  %a.btn.btn-warning{:href => "/edit"} 編集
+                  %a.btn.btn-warning{"data-target" => "#modal02","data-toggle" => "modal","data-dismiss" => "modal"} 削除
           -# モーダル2（お気に入り削除確認画面）
           #modal02.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1"}
             .modal-dialog.modal-dialog-centered{:role => "document"}
               .modal-content
                 .modal-header
                   %h5#modal01-label.modal-title 削除確認画面
-                  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                  %button.close{"aria-label" => "Close", "data-dismiss" => "modal"}
                     %span{"aria-hidden" => "true"} ×
                 .modal-body
                   %p.text-center
@@ -57,7 +57,7 @@
                       %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
                     %p.text-center googleを削除しますか？
                 .modal-footer
-                  %a.btn.btn-warning{:href => "/completion_delete", :type => "button"} 削除
+                  %a.btn.btn-warning{:href => "/completion_delete"} 削除
 
           .col-sm-6.col-md-3
             .card.img-thumbnail
