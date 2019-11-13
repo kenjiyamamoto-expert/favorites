@@ -54,43 +54,43 @@
             .col-sm-6.col-md-3
               .card.img-thumbnail
                 .image-area
-                  %a{"data-target" => "#modal01","data-toggle" => "modal"}
+                  %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
                     %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}/
                 .card-body.px-2.py-3
                   %h5.card-text.text-center= favorite.name
 
-          -# モーダル1(お気に入り詳細画面)
-          #modal01.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1"}
-            .modal-dialog.modal-dialog-centered{:role => "document"}
-              .modal-content
-                .modal-header
-                  %h5#modal01-label.modal-title google
-                  %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                    %span{"aria-hidden" => "true"} ×
-                .modal-body
-                  %p.text-center
-                    %a{:href => "https://www.google.com"}
-                      %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
-                  %p インターネットの代表的な検索エンジンのひとつ。ロボットと呼ばれるソフトウェアが世界中のWebサイトを巡回して、集めたデータを基に独自の計算を行い、検索結果の順序を決定している。
-                .modal-footer
-                  %a.btn.btn-warning{:href => "/edit"} 編集
-                  %a.btn.btn-warning{"data-target" => "#modal02","data-toggle" => "modal","data-dismiss" => "modal"} 削除
-          -# モーダル2（お気に入り削除確認画面）
-          #modal02.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1"}
-            .modal-dialog.modal-dialog-centered{:role => "document"}
-              .modal-content
-                .modal-header
-                  %h5#modal01-label.modal-title 削除確認画面
-                  %button.close{"aria-label" => "Close", "data-dismiss" => "modal"}
-                    %span{"aria-hidden" => "true"} ×
-                .modal-body
-                  %p.text-center
-                    %a{:href => "https://www.google.com"}
-                      %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
-                    %p.text-center googleを削除しますか？
-                .modal-footer
-                  %a.btn.btn-warning{:href => "/completion_delete"} 削除
-
+              -# モーダル1(お気に入り詳細画面)
+              .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1", id: "modal#{favorite.id}"}
+                .modal-dialog.modal-dialog-centered{:role => "document"}
+                  .modal-content
+                    .modal-header
+                      %h5#modal01-label.modal-title= favorite.name
+                      %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                        %span{"aria-hidden" => "true"} ×
+                    .modal-body
+                      %p.text-center
+                        %a{:href => favorite.url}
+                          %img.img-fluid{:alt => "#", :src => favorite.image}/
+                        = favorite.text
+                    .modal-footer
+                      %a.btn.btn-warning{:href => "/edit"} 編集
+                      %a.btn.btn-warning{"data-target" => "#modal02","data-toggle" => "modal","data-dismiss" => "modal"} 削除
+              -# モーダル2（お気に入り削除確認画面）
+              #modal02.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1"}
+                .modal-dialog.modal-dialog-centered{:role => "document"}
+                  .modal-content
+                    .modal-header
+                      %h5#modal01-label.modal-title 削除確認画面
+                      %button.close{"aria-label" => "Close", "data-dismiss" => "modal"}
+                        %span{"aria-hidden" => "true"} ×
+                    .modal-body
+                      %p.text-center
+                        %a{:href => "https://www.google.com"}
+                          %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
+                        %p.text-center googleを削除しますか？
+                    .modal-footer
+                      %a.btn.btn-warning{:href => "/completion_delete"} 削除
+    
 -# ページネーション
 %nav{"aria-label" => "Page navigation"}
   %ul.pagination.justify-content-center
