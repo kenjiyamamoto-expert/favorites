@@ -27,7 +27,8 @@
               %label{:for => "text1"} リンク先URL:
               = f.text_field :url,class: 'form-control',id: 'favprite_url',placeholder: "例)https://www.google.com"
             .form-group
-              %label{:for => "text1"} 画像ファイル:
+              .form-title
+                %label{:for => "text1"} 画像ファイル:
               = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
             .form-group
               %label{:for => "textarea1"} コメント:
