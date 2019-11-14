@@ -8,7 +8,7 @@
       #navbar-content.collapse.navbar-collapse.justify-content-end
         %ul.navbar-nav
           %li.nav-item.active
-            %a.nav-link{:href => "#"}
+            %a.nav-link{:href => "/new"}
               お気に入り登録
               %span.sr-only (current)
           %li.nav-item
@@ -19,21 +19,29 @@
       .container
         .form
           %h3.mb-h3 お気に入り編集
-          .form-group
-            %label{:for => "text1"} サイト名:
-            %input#text1.form-control{:type => "text", :placeholder => "google"}
-          .form-group
-            %label{:for => "text1"} リンク先URL:
-            %input#passwd1.form-control{:type => "text", :placeholder => "https://www.google.com"}
-          .form-group
-            %label{:for => "text1"} 画像ファイル:
-            %input#passwd1.form-control{:type => "text", :placeholder => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}
-          .form-group
-            %label{:for => "textarea1"} コメント:
-            %textarea#textarea1.form-control{:name=>"messaege", :rows=>"8",
-              :placeholder =>"インターネットの代表的な検索エンジンのひとつ。ロボットと呼ばれるソフトウェアが世界中のWebサイトを巡回して、集めたデータを基に独自の計算を行い、検索結果の順序を決定している。"}
-          .from-button
-            %a.btn.btn-warning{:href => "/completion_edit"} 編集する
+          = form_with model:@favorite,local: true do|f|
+            .form-group
+              %label{:for => "text1"} サイト名:
+              = f.text_field :name,class: 'form-control',id: 'favprite_name'
+            .form-group
+              %label{:for => "text1"} リンク先URL:
+              = f.text_field :url,class: 'form-control',id: 'favprite_url'
+            .form-group
+              .field.image
+                %label{:for => "text1"}画像ファイル: 
+                #img_field{:onclick => "$('#file').click()"}
+                  - if @favorite.image.url.present?
+                    = image_tag(@favorite.image.url)
+                  - else
+                    %i.fas.fa-image
+                    %i.fas.fa-file-upload.add
+                = f.file_field :image, class: "image", style: "display:none;", id: "file"
+             
+            .form-group
+              %label{:for => "textarea1"} コメント:
+              = f.text_area :text,rows: 8,class: 'form-control',id: 'favorite_text'
+            .from-button
+              = f.submit "編集",class: 'btn btn-warning'
 
 -# フッター
 %footer.py-4.bg-warning.text-light

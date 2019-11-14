@@ -73,7 +73,7 @@
                           %img.img-fluid{:alt => "#", :src => favorite.image}/
                         = favorite.text
                     .modal-footer
-                      %a.btn.btn-warning{:href => "/edit"} 編集
+                      =link_to '編集',edit_favorite_path(favorite),class: 'btn btn-warning'
                       %a.btn.btn-warning{"data-target" => "#modal02","data-toggle" => "modal","data-dismiss" => "modal"} 削除
               -# モーダル2（お気に入り削除確認画面）
               #modal02.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1"}

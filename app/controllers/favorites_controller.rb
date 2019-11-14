@@ -14,8 +14,15 @@ class FavoritesController < ApplicationController
   end
 
   def edit
+    @favorite= Favorite.find(params[:id])
   end
 
+  def update
+    favorite= Favorite.find(params[:id])
+    favorite.update!(favorite_params)
+    redirect_to "/completion_edit"
+  end
+  
   def completion_edit
   end
 
