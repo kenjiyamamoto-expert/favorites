@@ -19,29 +19,7 @@
       .container
         .form
           %h3.mb-h3 お気に入り登録
-          = form_with model:@favorite,local: true do|f|
-            .form-group
-              %label{:for => "text1"} サイト名:
-              = f.text_field :name,class: 'form-control',id: 'favprite_name',placeholder: "例)google"
-            .form-group
-              %label{:for => "text1"} リンク先URL:
-              = f.text_field :url,class: 'form-control',id: 'favprite_url',placeholder: "例)https://www.google.com"
-            .form-group
-              .field.image
-                %label{:for => "text1"}画像ファイル: 
-                #img_field{:onclick => "$('#file').click()"}
-                  - if @favorite.image.url.present?
-                    = image_tag(@favorite.image.url)
-                  - else
-                    %i.fas.fa-image
-                    %p ファイルを選択してください
-                    %i.fas.fa-file-upload.add
-                = f.file_field :image, class: "image", style: "display:none;", id: "file"
-            .form-group
-              %label{:for => "textarea1"} コメント:
-              = f.text_area :text,rows: 8,class: 'form-control',id: 'favorite_text',placeholder: "例)なんでもどうぞ"
-            .from-button
-              = f.submit "登録",class: 'btn btn-warning'
+          =render partial:'form', locals:{favorite:@favorite}
 
 -# フッター
 %footer.py-4.bg-warning.text-light
