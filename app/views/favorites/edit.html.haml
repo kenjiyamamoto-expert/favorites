@@ -27,22 +27,16 @@
               %label{:for => "text1"} リンク先URL:
               = f.text_field :url,class: 'form-control',id: 'favprite_url'
             .form-group
-              .form-title
-                -# %label{:for => "text1"} 画像ファイル:
-              -# = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
-
-            .field.image
-              = form_with(model: @favorite, local: true) do |form|
-                = form.label '画像ファイル:'
+              .field.image
+                %label{:for => "text1"}画像ファイル: 
                 #img_field{:onclick => "$('#file').click()"}
                   - if @favorite.image.url.present?
                     = image_tag(@favorite.image.url)
                   - else
                     %i.fas.fa-image
                     %i.fas.fa-file-upload.add
-                #{form.file_field :image, class: "image", style: "display:none;", id: "file"}
+                = f.file_field :image, class: "image", style: "display:none;", id: "file"
              
-              
             .form-group
               %label{:for => "textarea1"} コメント:
               = f.text_area :text,rows: 8,class: 'form-control',id: 'favorite_text'
