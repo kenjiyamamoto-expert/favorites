@@ -17,10 +17,12 @@
   overflow: hidden;
   box-sizing: border-box;
   transition: 0.3s ease-out;
+  text-align: center;
   img{
     width: 50%; 
     height: 50%;
     margin:auto;
+    padding:20px 0px;
     display: block;
   }
 }
@@ -31,7 +33,9 @@
   color: #aaa;
   line-height: 250px;
   transition: 0.3s ease-out;
+  text-align: center;
 }
+
  
 #img_field i.add {
   display: none;
@@ -48,6 +52,12 @@
 }
  
 #img_field:hover i {
+  transition: 0.3s ease-out;
+  display: block;
+  color: #fff;
+}
+
+#img_field:hover p {
   transition: 0.3s ease-out;
   display: block;
   color: #fff;
