@@ -30,18 +30,5 @@
             .from-button
               = f.submit "登録",class: 'btn btn-warning'
 
--# フッター
 %footer.py-4.bg-warning.text-light
-  .container.text-center
-    %ul.nav.justify-content-center.mb-3
-      %li.nav-item
-        %a.nav-link{:href => "#"} Top
-      %li.nav-item
-        %a.nav-link{:href => "#recommended"} おすすめサイト
-      %li.nav-item
-        %a.nav-link{:href => "#"} お気に入り登録
-      %li.nav-item
-        %a.nav-link{:href => "#"} ログアウト
-      %li.nav-item
-    %p
-      %samll Copyright ©2019 Favorites, All Rights Reserved.
+  =render 'favorites/footer'

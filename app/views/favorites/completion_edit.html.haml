@@ -9,20 +9,6 @@
             %h3.mb-h3 編集が完了しました
             .from-button
               %a.btn.btn-warning{:href => "/"} topに戻る
-
-
-  -# フッター
+              
 %footer.py-4.bg-warning.text-light.fixed-bottom
-  .container.text-center
-    %ul.nav.justify-content-center.mb-3
-      %li.nav-item
-        %a.nav-link{:href => "/"} Top
-      %li.nav-item
-        %a.nav-link{:href => "#recommended"} おすすめサイト
-      %li.nav-item
-        %a.nav-link{:href => "/new"} お気に入り登録
-      %li.nav-item
-        %a.nav-link{:href => "#"} ログアウト
-      %li.nav-item
-    %p
-      %samll Copyright ©2019 Favorites, All Rights Reserved.
+  =render 'favorites/footer'
