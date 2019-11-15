@@ -61,9 +61,9 @@
                         = favorite.text
                     .modal-footer
                       =link_to '編集',edit_favorite_path(favorite),class: 'btn btn-warning'
-                      %a.btn.btn-warning{"data-target" => "#modal02","data-toggle" => "modal","data-dismiss" => "modal"} 削除
+                      %a.btn.btn-warning{"data-target" => "#delete#{favorite.id}","data-toggle" => "modal","data-dismiss" => "modal"} 削除
               -# モーダル2（お気に入り削除確認画面）
-              #modal02.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1"}
+              .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal02-label", :role => "dialog", :tabindex => "-1", id: "delete#{favorite.id}"}
                 .modal-dialog.modal-dialog-centered{:role => "document"}
                   .modal-content
                     .modal-header
@@ -72,9 +72,8 @@
                         %span{"aria-hidden" => "true"} ×
                     .modal-body
                       %p.text-center
-                        %a{:href => "https://www.google.com"}
-                          %img.img-fluid{:alt => "#", :src => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}/
-                        %p.text-center googleを削除しますか？
+                        %img.img-fluid{:alt => "#", :src => favorite.image}/
+                        %p.text-center #{favorite.name}を削除しますか？
                     .modal-footer
                       %a.btn.btn-warning{:href => "/completion_delete"} 削除
     
@@ -96,10 +95,3 @@
 
 %footer.py-4.bg-warning.text-light
   =render 'favorites/footer'
-                
-      
-            
-      
-
-
-  
