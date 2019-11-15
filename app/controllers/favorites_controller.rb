@@ -22,7 +22,13 @@ class FavoritesController < ApplicationController
     favorite.update!(favorite_params)
     redirect_to "/completion_edit"
   end
-  
+
+  def destroy
+    favorite= Favorite.find(params[:id])
+    favorite.destroy
+    redirect_to "/completion_delete"
+  end
+
   def completion_edit
   end
 
