@@ -75,7 +75,7 @@
                         %img.img-fluid{:alt => "#", :src => favorite.image}/
                         %p.text-center #{favorite.name}を削除しますか？
                     .modal-footer
-                      %a.btn.btn-warning{:href => "/completion_delete"} 削除
+                      =link_to '削除',favorite,method: :delete, class: 'btn btn-warning'
     
 -# ページネーション
 %nav{"aria-label" => "Page navigation"}
