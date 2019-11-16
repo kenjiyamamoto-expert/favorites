@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_054146) do
+ActiveRecord::Schema.define(version: 2019_11_15_095315) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "image"
+    t.string "name", null: false
+    t.string "url", null: false
+    t.string "image", null: false
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
