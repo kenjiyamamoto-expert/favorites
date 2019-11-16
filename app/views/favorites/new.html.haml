@@ -1,21 +1,22 @@
 %body
   =render 'favorites/header'
-
   .py-0
     %section#registration
       .container
+        .row
+          =render partial: 'error_messages', locals: {favorite: @favorite, column: "name"}
         .form
           %h3.mb-h3 お気に入り登録
           = form_with model:@favorite,local: true do|f|
             .form-group
-              %label{:for => "text1"} サイト名:
-              = f.text_field :name,class: 'form-control',id: 'favprite_name',placeholder: "例)google"
+              %label{:for => "text1"} サイト名(必須):
+              = f.text_field :name,class: 'form-control',id: 'favprite_name',placeholder: "例)google (20文字まで)"
             .form-group
-              %label{:for => "text1"} リンク先URL:
+              %label{:for => "text1"} リンク先URL(必須):
               = f.text_field :url,class: 'form-control',id: 'favprite_url',placeholder: "例)https://www.google.com"
             .form-group
               .field.image
-                %label{:for => "text1"}画像ファイル: 
+                %label{:for => "text1"}画像ファイル(必須): 
                 #img_field{:onclick => "$('#file').click()"}
                   - if @favorite.image.url.present?
                     = image_tag(@favorite.image.url)
@@ -26,7 +27,7 @@
                 = f.file_field :image, class: "image", style: "display:none;", id: "file"
             .form-group
               %label{:for => "textarea1"} コメント:
-              = f.text_area :text,rows: 8,class: 'form-control',id: 'favorite_text',placeholder: "例)なんでもどうぞ"
+              = f.text_area :text,rows: 8,class: 'form-control',id: 'favorite_text',placeholder: "例)なんでもどうぞ (140文字まで)"
             .from-button
               = f.submit "登録",class: 'btn btn-warning'
 

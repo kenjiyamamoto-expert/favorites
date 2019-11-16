@@ -1,0 +1,5 @@
+- if favorite.errors.any?
+  .alert.alert-danger.container-fluid
+    %ul
+      - favorite.errors.full_messages.each do |message|
+        %li= message

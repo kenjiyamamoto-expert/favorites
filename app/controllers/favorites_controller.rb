@@ -8,9 +8,12 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    favorite= Favorite.new(favorite_params)
-    favorite.save!
-    redirect_to "/completion_registration"
+    @favorite= Favorite.new(favorite_params)
+    if @favorite.save
+      redirect_to "/completion_registration"
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -18,9 +21,12 @@ class FavoritesController < ApplicationController
   end
 
   def update
-    favorite= Favorite.find(params[:id])
-    favorite.update!(favorite_params)
-    redirect_to "/completion_edit"
+    @favorite= Favorite.find(params[:id])
+    if @favorite.update(favorite_params)
+      redirect_to "/completion_edit"
+    else
+      render 'edit'
+    end
   end
 
   def destroy
