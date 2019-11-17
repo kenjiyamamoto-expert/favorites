@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "favorites#index"
 
   get '/new'=> "favorites#new"
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   get '/completion_delete'=> "favorites#completion_delete"
 
   resources :favorites
+  resources :users, only: [:edit, :update]
 end
