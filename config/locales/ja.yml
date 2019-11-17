@@ -8,3 +8,8 @@ ja:
         name: サイト名
         url: リンク先URL
         image: 画像ファイル
+
+    attributes:
+      user:
+        name: 名前
+      
