@@ -10,10 +10,10 @@
           = form_with model:@favorite,local: true do|f|
             .form-group
               %label{:for => "text1"} サイト名:
-              = f.text_field :name,class: 'form-control',id: 'favprite_name'
+              = f.text_field :name,class: 'form-control',id: 'favorite_name'
             .form-group
               %label{:for => "text1"} リンク先URL:
-              = f.text_field :url,class: 'form-control',id: 'favprite_url'
+              = f.text_field :url,class: 'form-control',id: 'favorite_url'
             .form-group
               .field.image
                 %label{:for => "text1"}画像ファイル: 

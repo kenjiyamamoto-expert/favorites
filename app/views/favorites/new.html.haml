@@ -10,10 +10,10 @@
           = form_with model:@favorite,local: true do|f|
             .form-group
               %label{:for => "text1"} サイト名(必須):
-              = f.text_field :name,class: 'form-control',id: 'favprite_name',placeholder: "例)google (20文字まで)"
+              = f.text_field :name,class: 'form-control',id: 'favorite_name',placeholder: "例)google (20文字まで)"
             .form-group
               %label{:for => "text1"} リンク先URL(必須):
-              = f.text_field :url,class: 'form-control',id: 'favprite_url',placeholder: "例)https://www.google.com"
+              = f.text_field :url,class: 'form-control',id: 'favorite_url',placeholder: "例)https://www.google.com"
             .form-group
               .field.image
                 %label{:for => "text1"}画像ファイル(必須): 
