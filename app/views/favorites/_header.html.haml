@@ -12,4 +12,4 @@
         %li.nav-item
           = link_to "アカウント編集",edit_user_path(current_user),class: "nav-link"
         %li.nav-item
-          =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-link"
+          =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-link header-link", data: { confirm: 'ログアウトしますか？' }
