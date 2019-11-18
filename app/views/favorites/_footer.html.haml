@@ -1,13 +1,27 @@
-.container.text-center
- %ul.nav.justify-content-center.mb-3
-  %li.nav-item
-  %a.nav-link{:href => "#"} Top
-  %li.nav-item
-  %a.nav-link{:href => "#recommended"} おすすめサイト
-  %li.nav-item
-  %a.nav-link{:href => "#"} お気に入り登録
-  %li.nav-item
-  %a.nav-link{:href => "#"} ログアウト
-  %li.nav-item
- %p
-  %samll Copyright ©2019 Favorites, All Rights Reserved.
+-# .container.text-center
+-#   #navbar-content.collapse.navbar-collapse.justify-content-end
+-#     %ul.navbar-nav
+-#         %li.nav-item
+-#         = link_to "お気に入り登録",new_favorite_path,class: "nav-link"
+-#         %li.nav-item
+-#         = link_to "アカウント編集",edit_user_path(current_user),class: "nav-link"
+-#         %li.nav-item
+-#         =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-link header-link", data: { confirm: 'ログアウトしますか？' }
+-#     %li.nav-item
+-#     %p
+-#     %samll Copyright ©2019 Favorites, All Rights Reserved.
+
+%nav.navbar.navbar-expand-md.navbar-dark.bg-warning
+  .container
+    #navbar-content.collapse.navbar-collapse.justify-content-center
+      %ul.navbar-nav
+        %li.nav-item.active
+          %a.nav-link{:href => "/new"}
+            お気に入り登録
+            %span.sr-only (current)
+        %li.nav-item
+          = link_to "アカウント編集",edit_user_path(current_user),class: "nav-link"
+        %li.nav-item
+          =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-link header-link", data: { confirm: 'ログアウトしますか？' }
+%p.text-center Copyright ©2019 Favorites, All Rights Reserved.
+       
