@@ -10,7 +10,7 @@
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         = f.text_field :email,class: 'form-control',id: 'current_user_email',placeholder: "メールアドレス"
         = f.text_field :password,class: 'form-control',id: 'current_user_passpard',placeholder: "パスワード"
-        %button.btn.btn-lg.btn-warning.btn-block{:name => "Submit", :type => "Submit", :value => "Login"} Login
+        %button.btn.btn-lg.btn-warning.btn-block{:name => "Submit", :type => "Submit", :value => "login"} ログイン
  
-      
-
+        %p.row アカウントを持ちでない方↓
+        =link_to '新規登録',new_user_registration_path, class:'btn btn-lg btn-danger btn-block'
