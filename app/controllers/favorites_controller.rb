@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites= Favorite.all
+    @favorites= Favorite.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def new
