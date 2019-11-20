@@ -4,7 +4,7 @@
     %section#registration
       .container
         .row
-          =render partial: 'error_messages', locals: {favorite: @favorite, column: "name"}
+          =render partial: 'layouts/error_messages', locals: {favorite: @favorite, column: "name"}
         .form
           %h3.mb-h3 お気に入り登録
           = form_with model:@favorite,local: true do|f|

@@ -1,0 +1,20 @@
+.container-fuild
+  .signup-field
+    .form-sign-up{:action => "", :method => "post", :name => "Signup_Form"}
+      %h3.form-sign-up-heading 新規登録
+      %hr.colorgraph
+      %br
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.text_field :name, autofocus: true,class: 'form-control', maxlength: "20",placeholder: "名前(20文字以内）"
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email",class: 'form-control',placeholder: "メールアドレス"
+        .field
+          = f.password_field :password, autocomplete: "new-password",class: 'form-control',placeholder: "パスワード(7文字以上）"
+        .field
+          = f.password_field :password_confirmation, autocomplete: "new-password",class: 'form-control',placeholder: "パスワード（確認用）"
+        .actions
+          = f.submit "新規登録",class: 'btn btn-lg btn-danger btn-block'
+        %p.row アカウントをお持ちの方↓
+        =link_to 'ログイン',new_user_session_path, class:'btn btn-lg btn-warning btn-block'
