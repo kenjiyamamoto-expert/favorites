@@ -5,7 +5,6 @@
   display: -webkit-box;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 .card-img-thumbnail{
@@ -18,4 +17,9 @@
 
 .row{
   margin:20px 0
+}
+
+.modal-body{
+  margin:auto;
+  width: 50%;
 }
