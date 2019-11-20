@@ -1,0 +1,22 @@
+%body
+  =render 'favorites/header'
+
+  .py-0
+  %section#edit
+    .container
+      .row
+        =render partial: 'error_messages', locals: {current_user: current_user}
+      .form
+      %h3.mb-h3 アカウント編集
+      = form_with model:current_user,local: true do|f|
+        .form-group
+          %label{:for => "text1"} 名前:
+          = f.text_field :name,class: 'form-control',id: 'current_user_name'
+        .form-group
+          %label{:for => "text1"} メールアドレス:
+          = f.text_field :email,class: 'form-control',id: 'current_user_email'
+        .from-button
+          = f.submit "編集",class: 'btn btn-warning'
+  
+  %footer.py-4.bg-warning.text-light.fixed-bottom
+    =render 'favorites/footer'

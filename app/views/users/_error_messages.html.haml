@@ -1,0 +1,7 @@
+- if current_user.errors.any?
+  .alert.alert-danger.container-fluid
+    %ul
+      - current_user.errors.full_messages.each do |message|
+        %li= message
+
+   

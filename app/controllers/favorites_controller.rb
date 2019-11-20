@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
   def create
     @favorite= Favorite.new(favorite_params)
     if @favorite.save
-      redirect_to "/completion_registration"
+      redirect_to root_path,notice: "#{@favorite.name}を登録しました"
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class FavoritesController < ApplicationController
   def update
     @favorite= Favorite.find(params[:id])
     if @favorite.update(favorite_params)
-      redirect_to "/completion_edit"
+      redirect_to root_path,notice: "#{@favorite.name}を編集しました"
     else
       render 'edit'
     end
@@ -32,20 +32,11 @@ class FavoritesController < ApplicationController
   def destroy
     favorite= Favorite.find(params[:id])
     favorite.destroy
-    redirect_to "/completion_delete"
-  end
-
-  def completion_edit
-  end
-
-  def completion_registration
-  end
-
-  def completion_delete
+    redirect_to root_path,notice: "お気に入りを削除しました"
   end
 
   private
   def favorite_params
-    params.require(:favorite).permit(:name,:url,:image,:text)
+    params.require(:favorite).permit(:name,:url,:image,:text).merge(user_id: current_user.id)
   end
 end

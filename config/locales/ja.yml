@@ -1,10 +1,12 @@
 
 ja:
   activerecord:
-    models:
-      favorite: お気に入り
     attributes:
       favorite:
         name: サイト名
         url: リンク先URL
         image: 画像ファイル
+
+      user:
+        name: 名前
+      

@@ -4,16 +4,16 @@
     %section#registration
       .container
         .row
-          =render partial: 'error_messages', locals: {favorite: @favorite, column: "name"}
+          =render partial: 'error_messages', locals: {favorite: @favorite}
         .form
           %h3.mb-h3 お気に入り編集
           = form_with model:@favorite,local: true do|f|
             .form-group
               %label{:for => "text1"} サイト名:
-              = f.text_field :name,class: 'form-control',id: 'favprite_name'
+              = f.text_field :name,class: 'form-control',id: 'favorite_name'
             .form-group
               %label{:for => "text1"} リンク先URL:
-              = f.text_field :url,class: 'form-control',id: 'favprite_url'
+              = f.text_field :url,class: 'form-control',id: 'favorite_url'
             .form-group
               .field.image
                 %label{:for => "text1"}画像ファイル: 
