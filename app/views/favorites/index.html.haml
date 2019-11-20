@@ -80,24 +80,9 @@
                     .modal-footer
                       =link_to '削除',favorite,method: :delete, class: 'btn btn-warning'
     
-      .paginate-are.center-block
-        =paginate @favorites
-        =page_entries_info @favorites
-
--# %nav{"aria-label" => "Page navigation"}
--#   %ul.pagination.justify-content-center
--#     %li.page-item
--#       %a.page-link{"aria-label" => "Previous", :href => "#"}
--#         %span{"aria-hidden" => "true"} «
--#     %li.page-item
--#       %a.page-link{:href => "#"} 1
--#     %li.page-item
--#       %a.page-link{:href => "#"} 2
--#     %li.page-item
--#       %a.page-link{:href => "#"} 3
--#     %li.page-item
--#       %a.page-link{"aria-label" => "Next", :href => "#"}
--#         %span{"aria-hidden" => "true"} »
+        .paginate-area
+          =paginate @favorites
+          =page_entries_info @favorites
 
 %footer.py-4.bg-warning.text-light
   =render 'favorites/footer'
