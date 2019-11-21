@@ -1,0 +1,56 @@
+%body
+  =render 'favorites/header'
+
+  .py-0
+    %section#registrationsite
+    .container
+      %h3.mb-h3.text-center
+        = current_user.name+"さんのページ"
+      .content-title
+        %h3.mb-h3 登録サイト
+      .row
+        - @favorites.each do |favorite|
+          .col-sm-6.col-md-3
+            .card.img-thumbnail
+              .image-area
+                %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                  %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}/
+              .card-body.px-2.py-3
+                %h5.card-text.text-center= favorite.name
+
+            -# モーダル1(お気に入り詳細画面)
+            .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1", id: "modal#{favorite.id}"}
+              .modal-dialog.modal-dialog-centered{:role => "document"}
+                .modal-content
+                  .modal-header
+                    %h5#modal01-label.modal-title= favorite.name
+                    %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                      %span{"aria-hidden" => "true"} ×
+                  .modal-body
+                    %p.text-center
+                      %a{:href => favorite.url}
+                        %img.img-fluid{:alt => "#", :src => favorite.image}/
+                      = favorite.text
+                  .modal-footer
+                    =link_to '編集',edit_favorite_path(favorite),class: 'btn btn-warning'
+                    %a.btn.btn-warning{"data-target" => "#delete#{favorite.id}","data-toggle" => "modal","data-dismiss" => "modal"} 削除
+            -# モーダル2（お気に入り削除確認画面）
+            .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal02-label", :role => "dialog", :tabindex => "-1", id: "delete#{favorite.id}"}
+              .modal-dialog.modal-dialog-centered{:role => "document"}
+                .modal-content
+                  .modal-header
+                    %h5#modal01-label.modal-title 削除確認画面
+                    %button.close{"aria-label" => "Close", "data-dismiss" => "modal"}
+                      %span{"aria-hidden" => "true"} ×
+                  .modal-body
+                    %p.text-center
+                      %img.img-fluid{:alt => "#", :src => favorite.image}/
+                      %p.text-center #{favorite.name}を削除しますか？
+                  .modal-footer
+                    =link_to '削除',favorite_path(favorite.id),method: :delete, class: 'btn btn-warning'
+    
+      .paginate-area
+        =paginate @favorites
+        =page_entries_info @favorites
+  .footer.bg-warning.text-light.fixed-bottom
+    =render 'favorites/footer'
