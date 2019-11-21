@@ -1,6 +1,5 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites= Favorite.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def new
@@ -10,7 +9,7 @@ class FavoritesController < ApplicationController
   def create
     @favorite= Favorite.new(favorite_params)
     if @favorite.save
-      redirect_to root_path,notice: "#{@favorite.name}を登録しました"
+      redirect_to user_path(current_user),notice: "#{@favorite.name}を登録しました"
     else
       render 'new'
     end
@@ -23,7 +22,7 @@ class FavoritesController < ApplicationController
   def update
     @favorite= Favorite.find(params[:id])
     if @favorite.update(favorite_params)
-      redirect_to root_path,notice: "#{@favorite.name}を編集しました"
+      redirect_to user_path(current_user),notice: "#{@favorite.name}を編集しました"
     else
       render 'edit'
     end
@@ -31,8 +30,10 @@ class FavoritesController < ApplicationController
 
   def destroy
     favorite= Favorite.find(params[:id])
-    favorite.destroy
-    redirect_to root_path,notice: "お気に入りを削除しました"
+    if favorite.user_id == current_user.id
+      favorite.destroy
+      redirect_to user_path(current_user),notice: "お気に入りを削除しました"
+    end
   end
 
   private

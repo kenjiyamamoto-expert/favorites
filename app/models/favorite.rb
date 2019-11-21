@@ -5,4 +5,6 @@ class Favorite < ApplicationRecord
   validates :url,presence: true,uniqueness: true
   validates :image,presence: true
   validates :text,length:{maximum: 140}
+
+  belongs_to :user
 end

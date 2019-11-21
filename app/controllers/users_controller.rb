@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+
+  def show
+    @users=User.find(params[:id])
+    @favorites= Favorite.order("created_at DESC").page(params[:page]).per(20)
+  end
+
   def edit
   end
 
