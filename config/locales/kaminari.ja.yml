@@ -10,7 +10,7 @@ ja:
     page_entries_info:
       one_page:
         display_entries:
-          zero: "登録サイトがありません"
+          zero: "登録サイトはありません"
           one: "1件の登録サイトが表示されています"
           other: "%{count}件の登録サイトが表示されています"
       more_pages:
