@@ -5,8 +5,6 @@
     %section#recommended
       .container
         .row
-          %h3.mb-h3.text-center
-            = current_user.name+"さんのページ"
         %h3.mb-h3 おすすめサイト
         .row
           .col-sm-6.col-md-3
@@ -33,56 +31,7 @@
                 %img.card-img-thumbnail{:alt => "画像", :src => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEVad6///+r//////+xTcq3a39uZqMVWdK55kLr5+uphfbNthrb//+2mtMmKncBTcqxPb6zd4++3w9zs7/bU3OvFz+Njf7OCl8KgsNGLn8equNX19/uXqMzl6fN1jr2wvtnp7OStus19lMDDy9Pl6uPX3d2SpMNwibfM1Nrz9Oe9x9K2wdCFmL5Ia6uruMuhrcZlO4MGAAAF1ElEQVR4nO3da1fiOhSA4ZhGNrTVBnqhWC5eQGS88P//3SngEQRaKIns7Ky8H+bDrOWs/UzTtFJBxiuLk14+GGfM7LL5IO8lcTWDHf/rovvw7EdRBIAtOBlAOScb50nRQBj3npkw37YbCBhPRmcK49yXtHibQLLhEeOBsHgQAnvWixNyeHBG7gvTjK5vlfB7tcJiSGBrqQ/EIK4Wjsa0D+AmkSVVwsSPsKfTEkB6XJhSX6A/gZwcE6bMGiFj0cOhMCF2iT+RTPeFIx97Js2J5LewGNuxyWwDf/RLOLThMvG7qL8rtGcb3SmabIVFZqMQWPwjfLBvja6KBv8LYzuB5SWj+y3MbRWuD2IpjG27FG6D7lrYk9iD/FkiXwmLZxs30k2QxaWway+wPIhpKbT0UrEpGpZCixdpuUyDglm8k66CEUts+6bid1HKepYLc5bbLYQ+G9i80ay2Gja2W8gyZvrzQdXsvlS4XC6Xy+UyOwAQEJV/CNiEPZDOSlXEsqDd/ljVbrfnQZD5/urvVxG3gvgU7eXL7HHR8UJvXeiFnU5nsZjezt5e3pevbco3mkIGy1knDL2biryw7J7qK2cg/dasU4nbKqkKRXY39U77yApBth7DM3hkhXI+O9NHUwji7ozzj7AQ2MvZPJJC8M9foSSFwJoByQmB3TYDkhPKt/P3GJJC+dQUSEwo2g2XKDkhmzYG0hLKp+aHkJQQ5ovmQFJC+e+CQ0hJCEHnAiAloXxvfKUgJoRLzkJKQri/5CykJJQvFy1SQkJ22SKlI7zkhm0dmVcTxd0ZwtULwp397on8AJA4/W2Tt5g9tT7a7fF8NzqveZ+66Q4fW/6n/Hkysw178DOD+akbmqdPIudbRdFH/SINW9R/+Fy0ajca7506kMmvWuGjT+V0q0y+1wnDO/KH8NQ9W0D+EDIxqxNOaW+j62St8I3+ImXitkZowU56Qhh+WbBK64VL64Ut24WeE1LICbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHna9DBg5VNsl4oK77MwAczfrui22rgjfdV9VVlhj1cg+D7nS8H1QBv1o9GKwrbZh1FCOolF2TYB6/pFy6wSXvpF5r2gr9+oWkv+GsXev+sF97ZvkrDe7O20j84hoZdDvULO4ZdDvULF4adhvqF009s0l66hd6b9ULTLof6hcb9oI124avtO03HtMuhduHCtMuhfiE26CDNQm9m2mmoXWjad4f6heb9OJhu4dJ24Y157ybRLDTvcqhbuAiwQQdpFk4Ne0mfrd8JW1Gt5PDNTuvCN+MWaZl/PFb77GlZ+WVkOvV0zbgts3kWPSGtyAmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU88JsedTzwmx51PPCbHnU++awkznP3Z21xP6bI7ynr7rCTM2sFsIActRfhXd9YR91rNbGOUssVsoeixGeXPt9VZpl/ExxlZzLSFkBeM5xg3EtYTRgDOe4BzDqo/fXX2Srj6hSEthgbFM4fWuJm0ffwFZXAr5BOMjUURd2v7LxZCvhCNd/555RclayIdEfsNu46DPN8KRcZ/coymZfAtxLhh/3/oQboQx/V9seizo/gh5z8aDGOV8K+QD+4gwLnaFsXEfSKgasC7fFZb3bpYRZcp/C3lq1yVDTvi+kE9sOhVXt2sHQpz7079JboG7Qp5aci7CdonuCXmS2XCHCizlVUIe9/V954JVNO7yamF5MjLaGw5AXvBaIY8Hku5SBdnv7oMOhJx3B0ByrUIk+skh54iwNOaBiGghQQh/eMRXISzXajoMWBSRuHwAlINmgzQ+TqkQlhWjNO8HOI8Xm5QF/bzXLSod/wGytGaBOlxbkQAAAABJRU5ErkJggg=="}/
               .card-body.px-2.py-3
                 %h5.card-text.text-center facebook
-       
 
 
-      %section#registrationsite
-      .container
-        %h3.mb-h3 登録サイト
-        .row
-          - @favorites.each do |favorite|
-            .col-sm-6.col-md-3
-              .card.img-thumbnail
-                .image-area
-                  %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
-                    %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}/
-                .card-body.px-2.py-3
-                  %h5.card-text.text-center= favorite.name
-
-              -# モーダル1(お気に入り詳細画面)
-              .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1", id: "modal#{favorite.id}"}
-                .modal-dialog.modal-dialog-centered{:role => "document"}
-                  .modal-content
-                    .modal-header
-                      %h5#modal01-label.modal-title= favorite.name
-                      %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                        %span{"aria-hidden" => "true"} ×
-                    .modal-body
-                      %p.text-center
-                        %a{:href => favorite.url}
-                          %img.img-fluid{:alt => "#", :src => favorite.image}/
-                        = favorite.text
-                    .modal-footer
-                      =link_to '編集',edit_favorite_path(favorite),class: 'btn btn-warning'
-                      %a.btn.btn-warning{"data-target" => "#delete#{favorite.id}","data-toggle" => "modal","data-dismiss" => "modal"} 削除
-              -# モーダル2（お気に入り削除確認画面）
-              .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal02-label", :role => "dialog", :tabindex => "-1", id: "delete#{favorite.id}"}
-                .modal-dialog.modal-dialog-centered{:role => "document"}
-                  .modal-content
-                    .modal-header
-                      %h5#modal01-label.modal-title 削除確認画面
-                      %button.close{"aria-label" => "Close", "data-dismiss" => "modal"}
-                        %span{"aria-hidden" => "true"} ×
-                    .modal-body
-                      %p.text-center
-                        %img.img-fluid{:alt => "#", :src => favorite.image}/
-                        %p.text-center #{favorite.name}を削除しますか？
-                    .modal-footer
-                      =link_to '削除',favorite,method: :delete, class: 'btn btn-warning'
-    
-        .paginate-area
-          =paginate @favorites
-          =page_entries_info @favorites
-
-%footer.py-4.bg-warning.text-light
+%footer.py-4.bg-warning.text-light.fixed-bottom
   =render 'favorites/footer'

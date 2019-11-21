@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get '/completion_delete'=> "favorites#completion_delete"
 
   resources :favorites
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:show,:edit, :update]
 end
