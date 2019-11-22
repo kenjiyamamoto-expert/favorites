@@ -29,7 +29,7 @@
                   .modal-body
                     %p.text-center
                       %a{:href => favorite.url}
-                        %img.img-fluid{:alt => "#", :src => favorite.image}/
+                        %img.img-fluid{:alt => "#", :src => favorite.image}
                       = favorite.text
                   .modal-footer
                     =link_to '編集',edit_favorite_path(favorite),class: 'btn btn-warning'
@@ -44,7 +44,7 @@
                       %span{"aria-hidden" => "true"} ×
                   .modal-body
                     %p.text-center
-                      %img.img-fluid{:alt => "#", :src => favorite.image}/
+                      %img.img-fluid{:alt => "#", :src => favorite.image}
                       %p.text-center #{favorite.name}を削除しますか？
                   .modal-footer
                     =link_to '削除',favorite_path(favorite.id),method: :delete, class: 'btn btn-warning'
