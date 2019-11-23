@@ -1,17 +1,31 @@
 %nav.navbar.navbar-expand-md.navbar-dark.bg-warning.sticky-top
-  .container
-    %a.navbar-brand{:href => "/"} Favorites
-    %button.navbar-toggler{"aria-controls" => "navbar-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar-content", "data-toggle" => "collapse", :type => "button"}
-      %span.navbar-toggler-icon
-    #navbar-content.collapse.navbar-collapse.justify-content-end
-      %ul.navbar-nav
-        %li.nav-item.active
-          %a.nav-link{:href => "/new"}
-            お気に入り登録
-            %span.sr-only (current)
-        %li.nav-item
-          = link_to "マイページ",user_path(current_user),class: "nav-link"
-        %li.nav-item
-          = link_to "アカウント編集",edit_user_path(current_user),class: "nav-link"
-        %li.nav-item
-          =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-link header-link", data: { confirm: 'ログアウトしますか？' }
+  .header
+    .content-top
+      %a.site-name{:href => "/"} Favorites
+      .navbar-search
+        =form_tag search_favorites_path,class: "header-form", method: 'get'  do
+          %button.fa.fa-search{type: "submit"}
+          = text_field_tag :search,params[:search],class: "header-field",placeholder: "お気に入りを検索" 
+    .content-bottom
+      %button.navbar-toggler{"aria-controls" => "navbar-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar-content", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbar-content.collapse.navbar-collapse.justify-content-end
+        %ul.navbar-nav
+          %li.nav-item.active
+            %a.nav-link{:href => "/new"}
+              お気に入り登録
+              %span.sr-only (current)
+          %li.nav-item.active
+            = link_to "マイページ",user_path(current_user),class: "nav-link"
+          %li.nav-item.active
+            = link_to "アカウント編集",edit_user_path(current_user),class: "nav-link"
+          %li.nav-item.active
+            =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "nav-link header-link", data: { confirm: 'ログアウトしますか？' }
+
+
+      .content-right
+        
+  
+      
+    
+  

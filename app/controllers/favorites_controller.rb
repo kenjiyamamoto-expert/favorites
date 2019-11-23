@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   end
 
@@ -34,6 +36,12 @@ class FavoritesController < ApplicationController
       favorite.destroy
       redirect_to user_path(current_user),notice: "お気に入りを削除しました"
     end
+  end
+
+  def search
+    @users = current_user.id
+    @favorites = Favorite.search(params[:search])
+    @current_user_favorites=@favorites.where(user_id:@users).page(params[:page])
   end
 
   private
