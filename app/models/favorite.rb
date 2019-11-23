@@ -7,4 +7,9 @@ class Favorite < ApplicationRecord
   validates :text,length:{maximum: 140}
 
   belongs_to :user
+
+  def self.search(search)
+    return Favorite.all unless search
+    Favorite.where(['name LIKE ?', "%#{search}%"])
+  end
 end
