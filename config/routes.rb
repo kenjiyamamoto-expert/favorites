@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get '/completion_edit'=> "favorites#completion_edit"
   get '/completion_delete'=> "favorites#completion_delete"
 
-  resources :favorites
+  resources :favorites do
+    collection do
+      get 'search'
+    end
+  end
   resources :users, only: [:show,:edit, :update]
 end
