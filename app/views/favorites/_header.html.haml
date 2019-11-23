@@ -3,7 +3,7 @@
     .content-top
       %a.site-name{:href => "/"} Favorites
       .navbar-search
-        =form_tag root_path,class: "header-form", method: 'get'  do
+        =form_tag search_favorites_path,class: "header-form", method: 'get'  do
           %button.fa.fa-search{type: "submit"}
           = text_field_tag :search,params[:search],class: "header-field",placeholder: "お気に入りを検索" 
     .content-bottom
