@@ -3,9 +3,7 @@
     #navbar-content.collapse.navbar-collapse.justify-content-center
       %ul.navbar-nav
         %li.nav-item.active
-          %a.nav-link{:href => "/new"}
-            お気に入り登録
-            %span.sr-only (current)
+          = link_to "お気に入り登録",new_favorite_path,class: "nav-link"
         %li.nav-item
           = link_to "マイページ",user_path(current_user),class: "nav-link"
         %li.nav-item
