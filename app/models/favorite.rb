@@ -7,6 +7,11 @@ class Favorite < ApplicationRecord
   validates :text,length:{maximum: 140}
 
   belongs_to :user
+  has_many :links, dependent: :destroy
+
+  def link_user(user_id)
+   links.find_by(user_id: user_id)
+  end
 
   def self.search(search)
     return Favorite.all unless search
