@@ -29,6 +29,8 @@
                     %p.text-center
                       %a{:href => favorite.url}
                         %img.img-fluid{:alt => "#", :src => favorite.image}
+                      %div{:id => "links_buttons_#{favorite.id}"}
+                        = render partial: 'links/link', locals: { favorite: favorite, links: @links}
                       = favorite.text
                   .modal-footer
                     =link_to '編集',edit_favorite_path(favorite),class: 'btn btn-warning'
