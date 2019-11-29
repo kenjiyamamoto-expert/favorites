@@ -28,7 +28,7 @@
                   .modal-body
                     %p.text-center
                       %a{:href => favorite.url}
-                        %img.img-fluid{:alt => "#", :src => favorite.image}
+                        %img.img-fluid{:alt => "#", :src => favorite.image,"data-toggle"=>"tooltip","data-placement"=>"top","title"=>"クリックすると#{favorite.name}に飛びます" }
                       %div{:id => "links_buttons_#{favorite.id}"}
                         = render partial: 'links/link', locals: { favorite: favorite, links: @links}
                       = favorite.text
