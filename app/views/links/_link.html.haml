@@ -4,16 +4,16 @@
     .counter-area
       = link_to favorite_link_path(favorite_id: favorite.id ,id: favorite.links[0].id), method: :delete, remote: true do
         .minus_button
-          %button.fa.fa-minus-square-o{type: "submit"}
+          %button.fa.fa-minus-square-o{type: "submit","data-toggle"=>"tooltip","data-placement"=>"top","title"=>"カウントを減らします"}
         
       = link_to favorite_links_path(favorite.id), method: :post, remote: true do
         .plus_button
-          %button.fa.fa-plus-square-o{type: "submit"}
+          %button.fa.fa-plus-square-o{type: "submit","data-toggle"=>"tooltip","data-placement"=>"top","title"=>"使用回数をカウントします。リンク先に飛ぶ前にお使いください。"}
          
 - else
   .counter-area
     %p お気に入り使用回数:#{favorite.links_count}回
     = link_to favorite_links_path(favorite.id), method: :post, remote: true do
       .pulus_button
-        %button.fa.fa-plus-square-o{type: "submit"}
+        %button.fa.fa-plus-square-o{type: "submit","data-toggle"=>"tooltip","data-placement"=>"top","title"=>"使用回数をカウントします。リンク先に飛ぶ前にお使いください。"}
   
