@@ -7,6 +7,17 @@
       .content-title
         %h3.mb-h3 
           #{params[:search]}の検索結果
+        %select{name: :sort_order, class: 'btn btn-default dropdown-toggle'}
+          %option{value: "location.pathname", name: "location.pathname"}
+            並び替え
+          %option{value: "created_at_desc"}
+            登録の新しい順
+          %option{value: "created_at_asc"}
+            登録の古い順
+          %option{value: "links_count_desc"}
+            使用回数の多い順
+          %option{value: "links_count_asc"}
+            使用回数の少ない順
       .row
         - @current_user_favorites.each do |favorite|
           .col-sm-6.col-md-3
