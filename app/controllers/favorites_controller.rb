@@ -41,7 +41,8 @@ class FavoritesController < ApplicationController
   def search
     @users = current_user.id
     @favorites = Favorite.search(params[:search])
-    @current_user_favorites=@favorites.where(user_id:@users).page(params[:page])
+    sort = params[:sort] || "created_at DESC"
+    @current_user_favorites=@favorites.where(user_id:@users).page(params[:page]).order(sort)
   end
 
   private
