@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @recommended= Favorite.order("created_at DESC").where('user_id IS NULL')
   end
 
   def new
