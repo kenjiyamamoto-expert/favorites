@@ -35,7 +35,7 @@
                   %p.coment-area.text-left
                     #{recommended.text}
                   .modal-footer
-                    =link_to '登録',new_favorite_path,class: 'btn btn-warning'
+                    =link_to '登録',new_favorite_path,class: 'btn btn-warning',"data-toggle"=>"tooltip","data-placement"=>"top","title"=>"おすすめサイトをお気に入りに登録"
         
 %footer.bg-warning.text-left.fixed-bottom
   =render 'favorites/footer'
