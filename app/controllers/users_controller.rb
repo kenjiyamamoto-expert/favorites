@@ -2,7 +2,13 @@ class UsersController < ApplicationController
 
   def show
     @users=User.find(params[:id])
-    @favorites= @users.favorite.order("created_at DESC").page(params[:page]).per(20)
+    @favorites= @users.favorite.order("category_id ASC").page(params[:page]).per(48)
+    @convenient=@favorites.where(category_id:'1')
+    @sns=@favorites.where(category_id:'2')
+    @hobby=@favorites.where(category_id:'3')
+    @bussiness=@favorites.where(category_id:'4')
+    @shopping=@favorites.where(category_id:'5')
+    @other=@favorites.where(category_id:'6')
   end
 
   def edit
