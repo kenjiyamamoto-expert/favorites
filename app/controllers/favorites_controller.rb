@@ -48,6 +48,6 @@ class FavoritesController < ApplicationController
 
   private
   def favorite_params
-    params.require(:favorite).permit(:name,:url,:image,:text).merge(user_id: current_user.id)
+    params.require(:favorite).permit(:name,:url,:category_id,:image,:text).merge(user_id: current_user.id)
   end
 end

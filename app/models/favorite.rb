@@ -5,6 +5,7 @@ class Favorite < ApplicationRecord
   validates :url,presence: true
   validates :image,presence: true
   validates :text,length:{maximum: 140}
+  validates :category_id,presence: true
 
   belongs_to :user
   has_many :links, dependent: :destroy

@@ -6,7 +6,7 @@ ja:
         name: サイト名
         url: リンク先URL
         image: 画像ファイル
-
+        category_id: カテゴリー
       user:
         name: 名前
       
