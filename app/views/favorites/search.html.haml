@@ -6,7 +6,7 @@
     .container
       .content-title
         %h3.mb-h3 
-          #{params[:search]}の検索結果
+          "&ensp;#{params[:search]}&ensp;"の検索結果
         %select{name: :sort_order, class: 'btn btn-default dropdown-toggle'}
           %option{value: "location.pathname", name: "location.pathname"}
             並び替え
