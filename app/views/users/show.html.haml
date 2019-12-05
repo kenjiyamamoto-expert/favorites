@@ -7,16 +7,82 @@
       %h3.mb-h3.text-center
         = current_user.name+"さんのページ"
       .content-title
-        %h3.mb-h3 登録サイト
-      .row
-        - @favorites.each do |favorite|
-          .col-sm-6.col-md-3
-            .card.img-thumbnail
-              .image-area
-                %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
-                  %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
-              .card-body.px-2.py-3
-                %h5.card-text.text-center= favorite.name
+        %h3.mb-h3 登録サイト一覧
+      .content
+        -unless @convenient.empty?
+          %h4.mb-h4 便利機能
+        .category-area
+          - @favorites.each do |favorite|
+            -if(favorite.category_id==1)
+              .col-sm-6.col-md-3
+                .card.img-thumbnail
+                  .image-area
+                    %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                      %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
+                  .card-body.px-2.py-3
+                    %h5.card-text.text-center= favorite.name
+        -unless @sns.empty?
+          %h4.mb-h4 SNS
+        .category-area
+          - @favorites.each do |favorite|
+            -if(favorite.category_id==2)
+              .col-sm-6.col-md-3
+                .card.img-thumbnail
+                  .image-area
+                    %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                      %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
+                  .card-body.px-2.py-3
+                    %h5.card-text.text-center= favorite.name
+        -unless @hobby.empty?
+          %h4.mb-h4 趣味
+        .category-area
+          - @favorites.each do |favorite|
+            -if(favorite.category_id==3)
+              .col-sm-6.col-md-3
+                .card.img-thumbnail
+                  .image-area
+                    %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                      %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
+                  .card-body.px-2.py-3
+                    %h5.card-text.text-center= favorite.name
+        -unless @bussiness.empty?            
+          %h4.mb-h4 ビジネス
+        .category-area
+          - @favorites.each do |favorite|
+            -if(favorite.category_id==4)
+              .col-sm-6.col-md-3
+                .card.img-thumbnail
+                  .image-area
+                    %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                      %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
+                  .card-body.px-2.py-3
+                    %h5.card-text.text-center= favorite.name
+        -unless @shopping.empty?
+          %h4.mb-h4 買い物
+        .category-area
+          - @favorites.each do |favorite|
+            -if(favorite.category_id==5)
+              .col-sm-6.col-md-3
+                .card.img-thumbnail
+                  .image-area
+                    %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                      %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
+                  .card-body.px-2.py-3
+                    %h5.card-text.text-center= favorite.name
+        -unless @other.empty?
+          %h4.mb-h4 その他
+        .category-area
+          - @favorites.each do |favorite|
+            -if(favorite.category_id==6)
+              .col-sm-6.col-md-3
+                .card.img-thumbnail
+                  .image-area
+                    %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
+                      %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
+                  .card-body.px-2.py-3
+                    %h5.card-text.text-center= favorite.name
+ 
+              
 
             -# モーダル1(お気に入り詳細画面)
             .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modal01-label", :role => "dialog", :tabindex => "-1", id: "modal#{favorite.id}"}
