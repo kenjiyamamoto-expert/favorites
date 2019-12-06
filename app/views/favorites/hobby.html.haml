@@ -12,6 +12,15 @@
           - @hobbys.each do |favorite|
             .col-sm-6.col-md-3
               .card.img-thumbnail
+                .links-count-area
+                  .links-count-area__circle
+                    .links-count-area__circle__text
+                      -if favorite.links_count==nil||favorite.links_count==0
+                        = "0"
+                      -elsif favorite.links_count>0&&favorite.links_count<10000
+                        = favorite.links_count
+                      - else
+                        = "+9999"
                 .image-area
                   %a{"data-target" => "#modal#{favorite.id}","data-toggle" => "modal"}
                     %img.btn.card-img-thumbnail{:alt => "画像", :src => favorite.image}
