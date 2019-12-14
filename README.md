@@ -6,7 +6,7 @@ Favoritesはお気に入りのサイトを登録し、カウント機能を用�
 
 ## デモ
 
-![](https://user-images.githubusercontent.com/52599034/70846206-5b132680-1e9a-11ea-97ac-e0f7c5840d5e.gif)
+![](https://user-images.githubusercontent.com/52599034/70846482-1b017300-1e9d-11ea-92d9-d6541e5a35a1.gif)
 
 ## 機能
 
