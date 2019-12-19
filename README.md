@@ -10,6 +10,10 @@ Favoritesはお気に入りのサイトを登録し、カウント機能を用�
 非常に容易に登録ができる反面、数が多くなるにつれ管理しずらくなっていく。
 その問題点を解消するため本アプリを開発した。
 
+## テストアカウント
+email: "sample@gmail.com"
+password: 1111111
+
 ## デモ
 
 ![](https://user-images.githubusercontent.com/52599034/70846482-1b017300-1e9d-11ea-92d9-d6541e5a35a1.gif)
