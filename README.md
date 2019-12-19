@@ -11,8 +11,8 @@ Favoritesはお気に入りのサイトを登録し、カウント機能を用�
 その問題点を解消するため本アプリを開発した。
 
 ## テストアカウント
-email: "sample@gmail.com"
-password: 1111111
+email: sample@gmail.com
+,password: 1111111
 
 ## デモ
 
